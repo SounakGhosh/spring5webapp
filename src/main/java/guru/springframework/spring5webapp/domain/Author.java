@@ -2,6 +2,7 @@ package guru.springframework.spring5webapp.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -75,8 +76,7 @@ public class Author {
         if (o == null || getClass() != o.getClass()) return false;
 
         Author author = (Author) o;
-
-        return id != null ? id.equals(author.id) : author.id == null;
+        return Objects.equals(id, author.id) && Objects.equals(lastName, author.lastName);
     }
 
     @Override
